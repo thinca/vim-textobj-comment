@@ -1,0 +1,97 @@
+*textobj-comment.txt*	Text objects for a comment.
+
+Version: 0.1.0
+Author : thinca <thinca+vim@gmail.com>
+License: Creative Commons Attribution 2.1 Japan License
+         <http://creativecommons.org/licenses/by/2.1/jp/deed.en>
+
+==============================================================================
+CONTENTS					*textobj-comment-contents*
+
+INTRODUCTION			|textobj-comment-introduction|
+INTERFACE			|textobj-comment-interface|
+  KEY MAPPINGS			  |textobj-comment-key-mappings|
+CUSTOMIZING			|textobj-comment-customizing|
+CHANGELOG			|textobj-comment-changelog|
+
+
+==============================================================================
+INTRODUCTION					*textobj-comment-introduction*
+
+*textobj-comment* is a Vim plugin to provide text objects to select a comment.
+
+
+Requirements:
+- Vim 7.2 or later
+- |+syntax|
+- |textobj-user| 0.3.8 or later
+  <http://www.vim.org/scripts/script.php?script_id=2100>
+
+Latest version:
+http://github.com/thinca/vim-textobj-plugins/tree/comment
+
+
+==============================================================================
+INTERFACE					*textobj-comment-interface*
+
+------------------------------------------------------------------------------
+KEY MAPPINGS					*textobj-comment-key-mappings*
+
+These key mappings are defined in Visual mode and Operator-pending mode.
+
+<Plug>(textobj-comment-a)			*<Plug>(textobj-comment-a)*
+			Select the comment based on information of the syntax.
+
+<Plug>(textobj-comment-i)			*<Plug>(textobj-comment-i)*
+			Like |<Plug>(textobj-comment-a)|, select the inside of
+			the comment.  The inside means the blank inside found
+			first here.
+			Example: >
+			/* Inside of comment. */
+			   ^^^^^^^^^^^^^^^^^^
+<			This behavior might be undesirable in time.
+			Example: >
+			// Inside of comment.
+			   ^^^^^^^^^
+<			However, there is no method of unitedly treating this.
+
+
+
+==============================================================================
+CUSTOMIZING					*textobj-comment-customizing*
+
+				    *g:textobj_comment_no_default_key_mappings*
+					    *:TextobjCommentDefaultKeyMappings*
+This plugin will define the following key mappings in Visual mode and
+Operator-pending mode automatically.  If you don't want these key mappings,
+define |g:textobj_comment_no_default_key_mappings| before this plugin is loaded
+(e.g. in your |vimrc|).  You can also use |:TextobjCommentDefaultKeyMappings|
+to redefine these key mappings.  This command doesn't override existing {lhs}s
+unless [!] is given.
+
+	{lhs}	{rhs}			~
+	-----	----------------------	~
+	ac	<Plug>(textobj-comment-a)
+	ic	<Plug>(textobj-comment-i)
+
+
+
+==============================================================================
+BUGS						*textobj-comment-bugs*
+
+- This script use the information of |syntax|.  You must enable |syntax|.
+
+
+
+==============================================================================
+CHANGELOG					*textobj-comment-changelog*
+
+x.x.x	xxxx-xx-xx
+	- Added this document.
+
+0.1.0	2009-05-01
+	- Initial version.
+
+
+==============================================================================
+vim:tw=78:fo=tcq2mM:ts=8:ft=help:norl
