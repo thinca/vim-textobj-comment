@@ -90,7 +90,7 @@ endfunction
 
 function! s:is_comment()
   for id in synstack(line('.'), col('.'))
-    if synIDattr(synIDtrans(id), 'name') == 'Comment'
+    if synIDattr(synIDtrans(id), 'name') ==# 'Comment'
       return 1
     endif
   endfor
