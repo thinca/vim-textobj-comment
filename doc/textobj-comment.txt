@@ -88,6 +88,8 @@ CHANGELOG					*textobj-comment-changelog*
 
 x.x.x	xxxx-xx-xx
 	- Added this document.
+	- The line comment of two or more lines that the indent is done was
+	  treated as one target.
 
 0.1.0	2009-05-01
 	- Initial version.

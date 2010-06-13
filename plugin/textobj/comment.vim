@@ -27,11 +27,13 @@ call textobj#user#plugin('comment', {
 
 " Misc.  "{{{1
 function! s:select_a()  "{{{2
+  call search('^\s*\%#\s*\S', 'eW')
   if !s:is_comment()
     return 0
   endif
 
   let c = getpos('.')
+  let [b, e] = [c, c]
 
   let [save_ww, save_lz] = [&whichwrap, &lazyredraw]
   set whichwrap=h,l lazyredraw
@@ -40,10 +42,15 @@ function! s:select_a()  "{{{2
     normal! h
     if !s:is_comment()
       normal! l
+      if search('.\n\s*\%#', 'bW')
+        if s:is_comment()
+          continue
+        endif
+      endif
       break
     endif
+    let b = getpos('.')
   endwhile
-  let b = getpos('.')
 
   call setpos('.', c)
 
@@ -52,10 +59,15 @@ function! s:select_a()  "{{{2
     normal! l
     if !s:is_comment()
       normal! h
+      if search('\%#.\n\s*\S', 'eW')
+        if s:is_comment()
+          continue
+        endif
+      endif
       break
     endif
+    let e = getpos('.')
   endwhile
-  let e = getpos('.')
 
   let [&whichwrap, &lazyredraw] = [save_ww, save_lz]
 
