@@ -1,6 +1,6 @@
 *textobj-comment.txt*	Text objects for a comment.
 
-Version: 0.1.0
+Version: 0.1.1
 Author : thinca <thinca+vim@gmail.com>
 License: Creative Commons Attribution 2.1 Japan License
          <http://creativecommons.org/licenses/by/2.1/jp/deed.en>
@@ -86,7 +86,7 @@ BUGS						*textobj-comment-bugs*
 ==============================================================================
 CHANGELOG					*textobj-comment-changelog*
 
-x.x.x	xxxx-xx-xx
+0.1.1	2010-06-14
 	- Added this document.
 	- The line comment of two or more lines that the indent is done was
 	  treated as one target.
