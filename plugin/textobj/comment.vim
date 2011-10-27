@@ -25,8 +25,8 @@ call textobj#user#plugin('comment', {
 \    })
 
 
-" Misc.  "{{{1
-function! s:select_a()  "{{{2
+" Functions.  "{{{1
+function! s:select_a()
   call search('^\s*\%#\s*\S', 'eW')
   if !s:is_comment()
     return 0
@@ -75,8 +75,7 @@ function! s:select_a()  "{{{2
   return [wise, b, e]
 endfunction
 
-
-function! s:select_i()  "{{{2
+function! s:select_i()
   let outer = s:select_a()
   if type(outer) == type(0)
     return 0
@@ -101,7 +100,6 @@ function! s:select_i()  "{{{2
   return [wise, b, e]
 endfunction
 
-
 function! s:is_comment()
   for id in synstack(line('.'), col('.'))
     if synIDattr(synIDtrans(id), 'name') ==# 'Comment'
@@ -110,7 +108,6 @@ function! s:is_comment()
   endfor
   return 0
 endfunction
-
 
 function! s:cmp_pos(a, b)
   for i in range(1, 3)
@@ -123,7 +120,6 @@ function! s:cmp_pos(a, b)
   return 0
 endfunction
 
-
 function! s:judge_wise(b, e)
   return
   \ getline(a:b[1])[: a:b[2] - 1] =~# '^\s*.$' &&
@@ -133,6 +129,3 @@ endfunction
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
-
-
-" vim: foldmethod=marker
