@@ -86,6 +86,9 @@ BUGS						*textobj-comment-bugs*
 ==============================================================================
 CHANGELOG					*textobj-comment-changelog*
 
+x.x.x	xxxx-xx-xx
+	- |Linewise| support.
+
 0.1.1	2010-06-14
 	- Added this document.
 	- The line comment of two or more lines that the indent is done was

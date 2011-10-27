@@ -69,9 +69,10 @@ function! s:select_a()  "{{{2
     let e = getpos('.')
   endwhile
 
+  let wise = s:judge_wise(b, e)
   let [&whichwrap, &lazyredraw] = [save_ww, save_lz]
 
-  return ['v', b, e]
+  return [wise, b, e]
 endfunction
 
 
@@ -96,7 +97,8 @@ function! s:select_i()  "{{{2
     let e = _
   endif
 
-  return ['v', b, e]
+  let wise = s:judge_wise(b, e)
+  return [wise, b, e]
 endfunction
 
 
@@ -119,6 +121,13 @@ function! s:cmp_pos(a, b)
     endif
   endfor
   return 0
+endfunction
+
+
+function! s:judge_wise(b, e)
+  return
+  \ getline(a:b[1])[: a:b[2] - 1] =~# '^\s*.$' &&
+  \ getline(a:e[1])[a:e[2] - 1 :] =~# '^.\s*$' ? 'V' : 'v'
 endfunction
 
 
