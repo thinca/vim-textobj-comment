@@ -12,6 +12,7 @@ INTRODUCTION			|textobj-comment-introduction|
 INTERFACE			|textobj-comment-interface|
   KEY MAPPINGS			  |textobj-comment-key-mappings|
 CUSTOMIZING			|textobj-comment-customizing|
+BUGS				|textobj-comment-bugs|
 CHANGELOG			|textobj-comment-changelog|
 
 
@@ -60,14 +61,14 @@ These key mappings are defined in Visual mode and Operator-pending mode.
 ==============================================================================
 CUSTOMIZING					*textobj-comment-customizing*
 
-				    *g:textobj_comment_no_default_key_mappings*
-					    *:TextobjCommentDefaultKeyMappings*
+				*g:textobj_comment_no_default_key_mappings*
+					*:TextobjCommentDefaultKeyMappings*
 This plugin will define the following key mappings in Visual mode and
 Operator-pending mode automatically.  If you don't want these key mappings,
-define |g:textobj_comment_no_default_key_mappings| before this plugin is loaded
-(e.g. in your |vimrc|).  You can also use |:TextobjCommentDefaultKeyMappings|
-to redefine these key mappings.  This command doesn't override existing {lhs}s
-unless [!] is given.
+define |g:textobj_comment_no_default_key_mappings| before this plugin is
+loaded (e.g. in your |vimrc|).  You can also use
+|:TextobjCommentDefaultKeyMappings| to redefine these key mappings.  This
+command doesn't override existing {lhs}s unless [!] is given.
 
 	{lhs}	{rhs}			~
 	-----	----------------------	~
