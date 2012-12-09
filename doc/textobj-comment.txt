@@ -1,6 +1,6 @@
 *textobj-comment.txt*	Text objects for a comment.
 
-Version: 0.2.0
+Version: 0.2.1
 Author : thinca <thinca+vim@gmail.com>
 License: zlib License
 
@@ -85,6 +85,10 @@ BUGS						*textobj-comment-bugs*
 
 ==============================================================================
 CHANGELOG					*textobj-comment-changelog*
+
+0.2.1	2012-12-09
+	- Fixed an infinity loop bug.
+	- Autoloadize.
 
 0.2.0	2011-10-27
 	- |Linewise| support.

@@ -1,5 +1,5 @@
 " Text objects for a comment.
-" Version: 0.2.0
+" Version: 0.2.1
 " Author : thinca <thinca+vim@gmail.com>
 " License: zlib License
 
