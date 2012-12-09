@@ -37,7 +37,7 @@ function! textobj#comment#select_a()
   call setpos('.', c)
 
   let btm = line('$')
-  while line('.') != btm || col('.') != col('$') - 1
+  while line('.') != btm || col('.') < col('$')
     normal! l
     if !s:is_comment()
       normal! h
