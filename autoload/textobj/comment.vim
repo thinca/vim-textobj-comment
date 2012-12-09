@@ -1,3 +1,11 @@
+" Text objects for a comment.
+" Version: 0.2.0
+" Author : thinca <thinca+vim@gmail.com>
+" License: zlib License
+
+
+let s:save_cpo = &cpo
+set cpo&vim
 
 " Functions.  "{{{1
 function! textobj#comment#select_a()
@@ -101,3 +109,5 @@ function! s:judge_wise(b, e)
 endfunction
 
 
+let &cpo = s:save_cpo
+unlet s:save_cpo

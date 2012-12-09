@@ -18,8 +18,8 @@ set cpo&vim
 call textobj#user#plugin('comment', {
 \      '-': {
 \        '*sfile*': expand('<sfile>:p'),
-\        'select-a': 'ac',  '*select-a-function*': 'textobj#comment#select_a',
-\        'select-i': 'ic',  '*select-i-function*': 'textobj#comment#select_i',
+\        'select-a': 'ac', '*select-a-function*': 'textobj#comment#select_a',
+\        'select-i': 'ic', '*select-i-function*': 'textobj#comment#select_i',
 \      }
 \    })
 
